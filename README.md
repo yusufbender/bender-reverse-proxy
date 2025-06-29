@@ -17,14 +17,17 @@ Yük dengeleme, temel kimlik doğrulama, path rewrite, health check ve hot-reloa
 ## 🗂️ Proje Yapısı
 
 bender-reverse-proxy/
-├── api-backend/ # Örnek hedef API
-│ ├── backend.go
-│ └── Dockerfile
-├── router.go # Proxy yönlendirme ve core logic
-├── main.go # Uygulamanın giriş noktası
-├── routes.yaml # Dinamik konfigürasyon
-├── router_test.go # Unit test dosyaları
-└── .github/workflows/ci.yml # CI pipeline
+├── api-backend/               # Örnek hedef API
+│   ├── backend.go             # Basit HTTP sunucu (health + welcome endpoint)
+│   └── Dockerfile             # API için Docker yapılandırması
+├── router.go                  # Reverse proxy yönlendirme ve çekirdek mantık
+├── main.go                    # Uygulamanın giriş noktası
+├── routes.yaml                # Dinamik proxy konfigürasyonu (YAML)
+├── router_test.go             # Unit test dosyaları
+└── .github/
+    └── workflows/
+        └── ci.yml             # GitHub Actions CI pipeline dosyası
+
 
 
 ## 🧰 Kurulum ve Çalıştırma
